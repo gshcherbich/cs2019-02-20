@@ -36,17 +36,21 @@ import java.util.Scanner;
 */
 class TaskC3 {
     public static void main(String[] args) {
-        System.out.println(getWeight(75));
-    }
-        private static double getWeight(double marsweight){
-            double Mars = 3.86;
-            double Earth = 9.81;
-            double delta = Mars / Earth;
-            marsweight = marsweight * delta;
-            return new BigDecimal(marsweight).setScale(2, RoundingMode.HALF_UP).doubleValue();
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
+        double wm = getWeight(i);
+        System.out.println(wm);
     }
 
-    //String str = Double.toString(marsweight);
-    //String itog = new String("#0.00".format(str));
+    private static double getWeight(int weight) {
+        double res = weight * 3.86 / 9.81;
+        int r100 = (int) (res * 100);
+        double delta = res * 100 - r100;
+        if (delta > 0.5)
+            return (r100 + 1) / 100.00;
+        else
+            return r100/100.00;
+    }
+
 }
 
