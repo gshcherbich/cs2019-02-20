@@ -1,6 +1,9 @@
 package by.it.shcherbich.lesson02;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.Scanner;
 
 /*
 Ускорение свободного падения на Земле и Марсе таково:
@@ -40,7 +43,10 @@ class TaskC3 {
             double Earth = 9.81d;
             double delta = Mars / Earth;
             marsweight = marsweight * delta;
-            return marsweight;
+            return new BigDecimal(marsweight).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
+
+    //String str = Double.toString(marsweight);
+    //String itog = new String("#0.00".format(str));
 }
 
