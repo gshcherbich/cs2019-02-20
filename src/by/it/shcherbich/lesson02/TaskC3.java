@@ -38,9 +38,9 @@ class TaskC3 {
     public static void main(String[] args) {
         System.out.println(getWeight(75));
     }
-        static double getWeight(double marsweight){
-            double Mars = 3.86d;
-            double Earth = 9.81d;
+        private static double getWeight(double marsweight){
+            double Mars = 3.86;
+            double Earth = 9.81;
             double delta = Mars / Earth;
             marsweight = marsweight * delta;
             return new BigDecimal(marsweight).setScale(2, RoundingMode.HALF_UP).doubleValue();
