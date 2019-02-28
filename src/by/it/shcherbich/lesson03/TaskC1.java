@@ -1,5 +1,6 @@
 package by.it.shcherbich.lesson03;
 
+import java.util.Scanner;
 /*
 Lesson 03. Конвертер температуры
 
@@ -25,13 +26,16 @@ TC = (TF – 32) * 5/9
 
 
 class TaskC1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
+        double converter = convertCelsiumToFahrenheit(i);
+        System.out.println(converter);
+    }
 
-
-
-
-
-//    public static void main(String[] args) {
-//        System.out.println(convertCelsiumToFahrenheit(40));
-//    }
+    static double convertCelsiumToFahrenheit(int tc) {
+        double tf = 9 * tc / 5 + 32;
+        return tf;
+    }
 
 }
