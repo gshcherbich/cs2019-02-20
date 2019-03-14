@@ -34,8 +34,7 @@ class TaskC1 {
     }
 
     static double convertCelsiumToFahrenheit(int tc) {
-        double tf = 9 * tc / 5 + 32;
-        return tf;
+        return 9 * tc / 5.0 + 32;
     }
 
 }
