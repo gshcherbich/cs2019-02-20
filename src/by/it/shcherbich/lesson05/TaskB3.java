@@ -31,8 +31,8 @@ public class TaskB3 {
         int temp, one, last;
         one = m[0];
         last = m[m.length - 1];
-        for (int i = 0; i < m.length; i++) {
-            for (int j = m.length - 1; j >= i; i--) {
+        for (int i = 1; i < m.length; i++) {
+            for (int j = m.length - 1; j >= i; j--) {
                 if (m[j - 1] > m[j]) {
                     temp = m[j - 1];
                     m[j - 1] = m[j];
