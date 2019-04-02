@@ -14,16 +14,15 @@ public class task4 {
             arr[i] = rand.nextInt(90) + 10;
             System.out.print(arr[i] + " ");
         }
-        boolean checkIncreasing = true;
+        boolean isIncreasing = true;
         for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i + 1] > arr[i]) {
-            } else {
-                checkIncreasing = false;
+            if (arr[i + 1] <= arr[i]) {
+                isIncreasing = false;
                 System.out.println("Массив не является строго возрастающей последовательностью");
                 break;
             }
         }
-        if (checkIncreasing) {
+        if (isIncreasing) {
             System.out.println("Массив является строго возрастающей последовательностью");
         }
     }

@@ -9,7 +9,7 @@ package by.it.shcherbich.jd1.lesson03;
  */
 public class task3 {
     public static void main(String[] args) {
-        int[] arr = {0, 2, 3, 9, 0, 1, 2, 9, 1, 2, 0, 1, 1, 1, 9};
+        int[] arr = {9, 1, 0};
         int min = arr[0];
         int max = arr[0];
         int sum = 0;

@@ -10,21 +10,21 @@ public class task9 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int i = sc.nextInt();
-        int j = 2;
-        if (i > 2) {
-            while (j < i) {
+        boolean isSimply = true;
+        if (i >= 2) {
+            for (int j = 2; j < i; j++) {
                 if (i % j == 0) {
-                    System.out.println("Введенное число не является простым");
-                    break;
-                } else {
-                    j++;
-                    System.out.println("Введенное число является простым");
+                    isSimply = false;
                     break;
                 }
             }
-        } else if (i == 2) {
+        } else {
+            isSimply = false;
+        }
+        if (isSimply) {
             System.out.println("Введенное число является простым");
-        } else
+        } else {
             System.out.println("Введенное число не является простым");
+        }
     }
 }
