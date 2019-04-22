@@ -1,4 +1,4 @@
-package by.it.shcherbich.jd1.lesson06;
+package by.it.shcherbich.jd1.lesson07_OOP;
 /*
 Битва Лучника против Воина и Зомби
  */

@@ -1,6 +1,4 @@
-package by.it.shcherbich.jd1.lesson06;
-
-import java.util.Random;
+package by.it.shcherbich.jd1.lesson07_OOP;
 
 /*
 Маг наносит 25ед. урона и дополнительно 15ед. урона Зомби

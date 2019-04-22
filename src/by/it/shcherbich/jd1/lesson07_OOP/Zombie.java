@@ -1,4 +1,4 @@
-package by.it.shcherbich.jd1.lesson06;
+package by.it.shcherbich.jd1.lesson07_OOP;
 
 /*
 Зомби наносит 10ед. урона и может переродиться 1 раз c 50ед. здоровья
@@ -22,7 +22,7 @@ public class Zombie extends Enemy {
         if (this.health > 0) {
             return true;
         } else {
-            if (reincartation == false) {
+            if (!reincartation) {
                 setHealth(50);
                 System.out.println("Зомби " + getName() + " переродился с 50ед. здоровья");
                 reincartation = true;

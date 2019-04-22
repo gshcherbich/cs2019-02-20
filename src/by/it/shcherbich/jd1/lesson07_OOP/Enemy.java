@@ -1,4 +1,4 @@
-package by.it.shcherbich.jd1.lesson06;
+package by.it.shcherbich.jd1.lesson07_OOP;
 
 public abstract class Enemy implements Mortal {
     String name;
@@ -25,12 +25,15 @@ public abstract class Enemy implements Mortal {
 
     void takeDamage(int damage) {
         this.health -= damage;
-        System.out.println(getName() + " получил " + damage + "ед. уровна. Осталось " + getHealth() + "ед. здоровья");
+        if (getHealth()<0){
+            System.out.println(getName() + " получил " + damage + "ед. уровна. Осталось 0ед. здоровья");
+        }
+        else {
+            System.out.println(getName() + " получил " + damage + "ед. уровна. Осталось " + getHealth() + "ед. здоровья");
+        }
     }
 
     public boolean isAlive() {
-        if (this.health > 0) {
-            return true;
-        } else return false;
+        return health>0;
     }
 }

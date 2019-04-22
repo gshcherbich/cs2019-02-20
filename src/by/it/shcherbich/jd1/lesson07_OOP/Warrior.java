@@ -1,4 +1,4 @@
-package by.it.shcherbich.jd1.lesson06;
+package by.it.shcherbich.jd1.lesson07_OOP;
 
 /*
 Воин наносит 30ед. урона и Лучнику дополнительный удар в 20ед. урона.
