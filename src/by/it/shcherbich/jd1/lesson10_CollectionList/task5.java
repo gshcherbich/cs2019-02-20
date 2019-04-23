@@ -1,11 +1,9 @@
 package by.it.shcherbich.jd1.lesson10_CollectionList;
 
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
 /*
-5.	РћРїСЂРµРґРµР»РёС‚СЊ РјРЅРѕР¶РµСЃС‚РІРѕ РЅР° РѕСЃРЅРѕРІРµ РјРЅРѕР¶РµСЃС‚РІР° С†РµР»С‹С… С‡РёСЃРµР».
-РЎРѕР·РґР°С‚СЊ РјРµС‚РѕРґС‹ РґР»СЏ РѕРїСЂРµРґРµР»РµРЅРёСЏ РїРµСЂРµСЃРµС‡РµРЅРёСЏ Рё РѕР±СЉРµРґРёРЅРµРЅРёСЏ РјРЅРѕР¶РµСЃС‚РІ.
+5.	Определить множество на основе множества целых чисел.
+Создать методы для определения пересечения и объединения множеств.
  */
 
 public class task5 {
@@ -24,11 +22,12 @@ public class task5 {
         int2.add(new Integer(2));
         int2.add(new Integer(3));
         int2.add(new Integer(5));
-
+        System.out.println("Множество 1: "+int1);
+        System.out.println("Множество 2: "+int2);
         HashSet<Integer> int3 = consolidationIntHashSet(int1, int2);
-        System.out.println(int3);
+        System.out.println("Объединение множеств: "+int3);
         HashSet<Integer> int4 = crossIntHashSet(int1, int2);
-        System.out.println(int4);
+        System.out.println("Пересечение множеств: "+int4);
     }
 
     static HashSet consolidationIntHashSet(HashSet<Integer> hs1, HashSet<Integer> hs2) {
@@ -39,24 +38,7 @@ public class task5 {
     }
 
     static HashSet crossIntHashSet(HashSet<Integer> hs1, HashSet<Integer> hs2) {
-        HashSet<Integer> int3 = new HashSet<>();
-        if (hs1.size() >= hs2.size()) {
-            Iterator<Integer> iter = hs1.iterator();
-            while (iter.hasNext()) {
-                int i = iter.next();
-                if (hs1.contains(hs2)) {
-                    int3.add(i);
-                }
-            }
-        } else {
-            Iterator<Integer> iter = hs2.iterator();
-            while (iter.hasNext()) {
-                int i = iter.next();
-                if (hs1.contains(hs2)) {
-                    int3.add(i);
-                }
-            }
-        }
-        return int3;
+        hs1.retainAll(hs2);
+        return hs1;
     }
 }
