@@ -13,13 +13,14 @@ import java.util.regex.Pattern;
 дл€ которых последн€€ буква одного слова совпадает с первой буквой следующего слова
 4. «адан файл с текстом. ¬ каждой строке найти и вывести наибольшее число цифр, идущих подр€д.
  */
-public class task12 {
+public class task1234 {
     public static void main(String[] args) throws IOException {
         int b = 0;
         FileInputStream fis = null;
         InputStreamReader isr = null;
         StringBuilder str = new StringBuilder();
         StringBuilder sb = new StringBuilder();
+        System.out.println("1. ‘айл E:/io.txt выводим в консоль построчно:");
         try {
             fis = new FileInputStream("E:/io.txt");
             isr = new InputStreamReader(fis);
@@ -36,17 +37,33 @@ public class task12 {
         Pattern pattern = Pattern.compile("\\s([ја≈е®Є»иќо”уЁэџыёюя€]+)([ј-яа-€]*)");
         Matcher matcher = pattern.matcher(str);
         while (matcher.find()) {
-            sb.append(matcher.group() + " ");
+            sb.append(matcher.group());
         }
-        System.out.println("\n2.Cлова, начинающиес€ с гласной буквы = " + sb);
-        String str3= String.valueOf(str);
-        Pattern pattern2 = Pattern.compile("\\s*(\\s|,|!|\\.)\\s*");
-        String[]words=pattern2.split(str3);
-        for (int i = words.length - 1; i >= 0; i--) {
-            System.out.println(words[i]);
-
+        System.out.println("\n2. Cлова, начинающиес€ с гласной буквы = " + sb);
+        matcher.reset();
+        Pattern pattern2 = Pattern.compile("[ј-яа-€]*([ј-яа-€]{1}) \\1[ј-яа-€]*");
+        matcher = pattern2.matcher(str);
+        sb.delete(0, sb.length());
+        while (matcher.find()) {
+            sb.append(matcher.group());
         }
-
-
+        System.out.println("3. —ловосочетани€, в которых последн€€ буква слова совпадает с первой буквой следующего слова = " + sb);
+        matcher.reset();
+        Pattern pattern3 = Pattern.compile("[0-9]+");
+        matcher = pattern3.matcher(str);
+        sb.delete(0, sb.length());
+        List arr = new ArrayList();
+        while (matcher.find()) {
+            arr.add(matcher.group());
+        }
+        String number = "";
+        for (int i = arr.size() - 1; i > 0; i--) {
+            if (arr.get(i).toString().length() > arr.get(i - 1).toString().length()) {
+                number = arr.get(i).toString();
+            } else {
+                number = arr.get(i - 1).toString();
+            }
+        }
+        System.out.println("4. Ќайти и вывести наибольшее число цифр, идущих подр€д = " + number);
     }
 }
