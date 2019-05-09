@@ -8,27 +8,27 @@ import java.math.RoundingMode;
 заданными полями и полями типа BigDecimal.
  */
 
-public class Arifmetic {
+public class Arithmetic {
 
     BigDecimal bd1;
     BigDecimal bd2;
 
-    public Arifmetic(int a, int b) {
+    public Arithmetic(int a, int b) {
         print(add(a, b));
     }
 
-    public Arifmetic(double a, double b) {
+    public Arithmetic(double a, double b) {
         print(add(a, b));
         bd1 = new BigDecimal(a);
         bd2 = new BigDecimal(b);
-        System.out.println(bd1.add(bd2).setScale(2, RoundingMode.DOWN));
+        System.out.println(bd1.add(bd2).setScale(2, RoundingMode.CEILING));
     }
 
-    public Arifmetic(int a, double b) {
+    public Arithmetic(int a, double b) {
         print(add(b, a));
     }
 
-    public Arifmetic(double a, int b) {
+    public Arithmetic(double a, int b) {
         print(add(a, b));
     }
 

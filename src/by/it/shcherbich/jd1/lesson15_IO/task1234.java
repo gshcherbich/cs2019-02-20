@@ -15,24 +15,18 @@ import java.util.regex.Pattern;
  */
 public class task1234 {
     public static void main(String[] args) throws IOException {
-        int b = 0;
-        FileInputStream fis = null;
-        InputStreamReader isr = null;
         StringBuilder str = new StringBuilder();
         StringBuilder sb = new StringBuilder();
         System.out.println("1. ‘айл E:/io.txt выводим в консоль построчно:");
-        try {
-            fis = new FileInputStream("E:/io.txt");
-            isr = new InputStreamReader(fis);
-            while ((b = isr.read()) != -1) {
-                str.append(((char) b));
-                System.out.print((char) b);
+        String str1;
+        try (BufferedReader br = new BufferedReader(new FileReader("E:/io.txt")))
+        {
+            while ((str1 = br.readLine()) !=null) {
+                str.append(str1+"\n");
+                System.out.println(str1);
             }
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            fis.close();
-            isr.close();
         }
         Pattern pattern = Pattern.compile("\\s([ја≈е®Є»иќо”уЁэџыёюя€]+)([ј-яа-€]*)");
         Matcher matcher = pattern.matcher(str);

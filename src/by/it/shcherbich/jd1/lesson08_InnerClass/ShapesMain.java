@@ -12,7 +12,7 @@ public class ShapesMain {
         System.out.println(circle);
 
         ShapeUtils shapeUtils = new ShapeUtils();
-        System.out.println(shapeUtils.whoTriangle(triangle));
+        System.out.println(shapeUtils.whoTriangle(square));
         System.out.println(square.squareEQUALS(rectangle));
     }
 }
