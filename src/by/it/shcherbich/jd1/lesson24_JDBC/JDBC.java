@@ -36,6 +36,7 @@ public class JDBC {
             System.out.println("2 = добавить новую запись в БД");
             System.out.println("3 = удалить запись из БД");
             System.out.println("4 = изменить запись в БД");
+            System.out.println("any key = выход");
             int i = sc.nextInt();
             if (i == 1) {
                 ArrayList<Countries> list = editTableCountries("select * from pvt.countries");
@@ -62,6 +63,7 @@ public class JDBC {
                 String country_name2 = sc.next();
                 ps.executeUpdate("update pvt.countries set country_name=\"" + country_name2 + "\" where country_name=\"" + country_name + "\";");
             }
+            else return;
         }
     }
 
